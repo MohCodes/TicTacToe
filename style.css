@@ -1,0 +1,33 @@
+.mainContainer{
+    border: darkcyan double;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.title{
+    border: darkcyan double;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:15vh;
+    margin-bottom: -15vh;
+    font-size: 40px;
+
+}
+.ticTacToeContainer{
+    border: darkcyan double;
+    height: 60vh;
+    width:70vh;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+
+.squares{
+    border: darkcyan double;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
