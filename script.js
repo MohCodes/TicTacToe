@@ -7,24 +7,43 @@ const players = (name,symbol) => {
     return{ name, symbol};
 };
 
+// const gameFlow = (() => {
+//     const player1 = players('player1','X');
+//     const player2 = players('player2','O');
+
+//     let turn = "X";
+
+//     const nextTurn = ()=>{
+
+//         if(turn =="X"){
+//             turn = "O";
+//         }
+//         else{
+//             turn = "X";
+//         };
+//     };
+
+//     return{player1,player2,turn, nextTurn};
+// })();
 
 
 
 const render = (() => {
 
+    const player1 = players('player1','X');
+    const player2 = players('player2','O');
+
     let turn = "X";
-    function nextTurn (){
+
+    const nextTurn = ()=>{
+
         if(turn =="X"){
             turn = "O";
         }
         else{
             turn = "X";
-        }
-    }
-
-
-    const player1 = players('player1','X');
-    const player2 = players('player2','O');
+        };
+    };
     
     const createGridSquares = () =>{ 
         for (var i = 0; i<gameBoard.board.length;i++){
@@ -42,9 +61,15 @@ const render = (() => {
         createGridSquares();
         for(var i = 0; i<gameBoard.board.length;i++){
            let div = document.getElementById(gameBoard.board[i]);
-
+            
            function addInput(){
-            div.textContent = `${turn}`
+            div.textContent = `${turn}`;
+            if (turn == "X"){
+                div.style.color = "red"
+            }
+            if(turn == "O"){
+                div.style.color = "green"
+            }
             nextTurn();
             div.removeEventListener('click',addInput);
            };
