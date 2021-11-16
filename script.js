@@ -43,7 +43,7 @@ const render = (() => {
     
     //creating DOM elements for grid
 
-    const renderUsedSquares =()=>{
+    const renderSquares =()=>{
         let mainDiv = document.getElementById("ticTacToeContainer");
         mainDiv.innerHTML =``;
 
@@ -81,13 +81,79 @@ const render = (() => {
         const squareClicked = e.target.id;
         gameBoard.board.splice(squareClicked,1,`${turn.symbol}`);
         nextTurn();
-        renderUsedSquares();
-
+        renderSquares();
+        winningLogic.determineIndexOfPlays();
+        winningLogic.determineWinnerO();
+        winningLogic.determineWinnerX();
+        winningLogic.stopGameWhenWon();
+        
     }
 
-     return {renderUsedSquares,addInput};
+     return {renderSquares,addInput};
 
     })();
 
- render.renderUsedSquares();
+const winningLogic = (() => {
+    let indexesOfPlayer1 = [];
+    let indexesOfPlayer2 = [];
 
+const determineIndexOfPlays = ()=>{
+
+    var resultsX =[];
+    var resultsO =[];
+
+    gameBoard.board.forEach((choice,index)=> choice ==='X'? resultsX.push(index):null);
+    indexesOfPlayer1 = resultsX;
+    console.log(indexesOfPlayer1)
+
+    gameBoard.board.forEach((choice,index)=> choice ==='O'? resultsO.push(index):null);
+    indexesOfPlayer2 = resultsO;
+    console.log(indexesOfPlayer2)
+
+}
+
+let resultO
+let resultX
+const determineWinnerX = () =>{
+     resultX = gameBoard.winningCombination.some((ar) => ar.every((e) => indexesOfPlayer1.includes(e)));
+      console.log(resultX);
+};
+
+const determineWinnerO = () =>{
+     resultO = gameBoard.winningCombination.some((ar) => ar.every((e) => indexesOfPlayer2.includes(e)));
+      console.log(resultO);
+};
+
+const stopGameWhenWon = ()=>{
+    if(resultX == true){
+        alert("player 1 won")
+        let div = document.querySelectorAll(".squares");
+        div.forEach(function(element){
+            element.removeEventListener('click',render.addInput);
+        }
+        )}
+    else if(resultO == true){
+        alert("player 2 won")
+        let div = document.querySelectorAll(".squares");
+        div.forEach(function(element){
+            element.removeEventListener('click',render.addInput);
+        }
+        )}
+    else if (resultO == false && resultX == false &&indexesOfPlayer1.length==5 ){
+        
+        alert("Draw")
+    //     let div = document.querySelectorAll(".squares");
+    //     div.forEach(function(element){
+    //         element.removeEventListener('click',render.addInput);
+    // })
+        }
+
+};
+
+
+return{indexesOfPlayer1,indexesOfPlayer2,determineIndexOfPlays,determineWinnerO,determineWinnerX,stopGameWhenWon}
+
+ })();
+
+
+ render.renderSquares();
