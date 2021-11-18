@@ -2,21 +2,27 @@
   display: none;
 }
 .mainContainer {
-  border: darkcyan double;
-  height: 70vh;
+  border-right: #b85aad solid;
+  border-left: #b85aad solid;
+  border-top: #b85aad solid;
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  background-color: #ffe189;
 }
 .title {
-  border: darkcyan double;
+  border: #b85aad solid;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 15vh;
   margin-bottom: -15vh;
   font-size: 40px;
+  background-color: #da9088;
+  border-radius: 20px;
+  color: #58460d;
 }
 .ticTacToeContainer {
   border: darkcyan double;
@@ -37,11 +43,16 @@
 }
 
 .buttons {
-  border: darkcyan double;
-  height: 10vh;
+  border-bottom: #b85aad solid;
+  border-right: #b85aad solid;
+  border-left: #b85aad solid;
+  height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #ffe189;
+  /* border-radius: 6vh; */
+  margin-top: -6vh;
 }
 
 .reset {
@@ -51,6 +62,7 @@
   background: none;
   border: 12px single darkcyan;
   margin-left: 3vh;
+  border-radius: 12vh;
 }
 
 .winner {
@@ -60,18 +72,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #dd9296;
+  color: #58460d;
+  border-radius: 6vh;
 }
+
 .plcaeHolder {
   width: 15vh;
 }
 
 .startScreen {
   border: darkcyan double;
-  height: 70vh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  background-color: #ffe189;
+  border: #b85aad solid;
 }
 .userTitle {
   margin-top: 1vh;
@@ -86,6 +104,8 @@
   align-items: center;
   flex-direction: column;
   gap: 10vh;
+  background-color: #2e88accc;
+  border-radius: 5vh;
 }
 
 .nameContainers {
@@ -97,6 +117,8 @@
   height: 15vh;
   width: 50vh;
   gap: 1.5vh;
+  background-color: hsla(6, 29%, 73%, 0.911);
+  border-radius: 4vh;
 }
 .user1Input {
   display: flex;
@@ -130,4 +152,5 @@
   border: olive single;
   border-width: 1px;
   margin-bottom: 1vh;
+  background-color: hsla(6, 29%, 73%, 0.911);
 }

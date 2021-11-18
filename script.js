@@ -19,8 +19,6 @@ const players = (name,symbol) => {
     return{ name, symbol};
 };
 
-let player1Name = document.getElementById("user1Input").value;
-let player2Name = document.getElementById("user2Input").value;
 
 
 
@@ -139,7 +137,7 @@ const stopGameWhenWon = ()=>{
         }
         )}
     else if(resultO == true){
-        winnerDiv.textContent = `${player1.name}Has Won!!`
+        winnerDiv.textContent = `${player2.name} Has Won!!`
         let div = document.querySelectorAll(".squares");
         div.forEach(function(element){
             element.removeEventListener('click',render.addInput);
@@ -173,6 +171,9 @@ return{indexesOfPlayer1,indexesOfPlayer2,determineIndexOfPlays,determineWinnerO,
     const submitButton = ()=>{
         let player1Name = document.getElementById("user1Input").value;
         let player2Name = document.getElementById("user2Input").value;
+        if(player1Name == '' || player2Name == ''){
+            return alert('Enter Names!!!');
+        }
         player1.name = player1Name;
         player2.name = player2Name;
 
@@ -192,4 +193,4 @@ return{indexesOfPlayer1,indexesOfPlayer2,determineIndexOfPlays,determineWinnerO,
  submitBtn.addEventListener('click',buttonLogic.submitButton);
 
 
- 
+ let player1Name = document.getElementById("user1Input").value;
