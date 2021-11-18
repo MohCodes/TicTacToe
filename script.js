@@ -2,7 +2,7 @@
 
 
 const gameBoard = (() => {
-    const board = ['','','','','','','','',''];
+    let board = ['','','','','','','','',''];
     const winningCombination = [
         [0,1,2],
         [3,4,5],
@@ -125,27 +125,24 @@ const determineWinnerO = () =>{
 };
 
 const stopGameWhenWon = ()=>{
+    let winnerDiv = document.getElementById('winner')
+
     if(resultX == true){
-        alert("player 1 won")
+        winnerDiv.textContent = "Player 1 Has Won!"
         let div = document.querySelectorAll(".squares");
         div.forEach(function(element){
             element.removeEventListener('click',render.addInput);
         }
         )}
     else if(resultO == true){
-        alert("player 2 won")
+        winnerDiv.textContent = "Player 2 Has Won!!"
         let div = document.querySelectorAll(".squares");
         div.forEach(function(element){
             element.removeEventListener('click',render.addInput);
         }
         )}
-    else if (resultO == false && resultX == false &&indexesOfPlayer1.length==5 ){
-        
-        alert("Draw")
-    //     let div = document.querySelectorAll(".squares");
-    //     div.forEach(function(element){
-    //         element.removeEventListener('click',render.addInput);
-    // })
+    else if (resultO == false && resultX == false &&indexesOfPlayer1.length==5 || indexesOfPlayer2.length==5  ){
+        winnerDiv.textContent = "Its A DRAW!"
         }
 
 };
@@ -156,4 +153,26 @@ return{indexesOfPlayer1,indexesOfPlayer2,determineIndexOfPlays,determineWinnerO,
  })();
 
 
+
+ const buttonLogic = (() => {
+
+    const resetButton = ()=>{
+        let resetBtn = document.getElementById("resetButton");
+        resetBtn.addEventListener('click', resetBoard)
+    };
+    const resetBoard = ()=>{
+        const OGboard = ['','','','','','','','',''];
+        gameBoard.board = OGboard;
+        render.renderSquares();
+        console.log(gameBoard.board)
+    };
+
+
+    return{resetButton};
+})();
+
  render.renderSquares();
+ buttonLogic.resetButton();
+
+
+ 

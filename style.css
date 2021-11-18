@@ -1,35 +1,61 @@
-.mainContainer{
-    border: darkcyan double;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
+.mainContainer {
+  border: darkcyan double;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
-.title{
-    border: darkcyan double;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:15vh;
-    margin-bottom: -15vh;
-    font-size: 40px;
+.title {
+  border: darkcyan double;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  margin-bottom: -15vh;
+  font-size: 40px;
+}
+.ticTacToeContainer {
+  border: darkcyan double;
+  height: 60vh;
+  width: 70vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
 
-}
-.ticTacToeContainer{
-    border: darkcyan double;
-    height: 60vh;
-    width:70vh;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+.squares {
+  border: darkcyan double;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-.squares{
-    border: darkcyan double;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.buttons {
+  border: darkcyan double;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 82vh;
+}
+
+.reset {
+  height: 8vh;
+  width: 12vh;
+  color: inherit;
+  background: none;
+  border: 12px single darkcyan;
+  margin-left: 3vh;
+}
+
+.winner {
+  border: darkcyan double;
+  height: 8vh;
+  width: 22vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
