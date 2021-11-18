@@ -19,6 +19,10 @@ const players = (name,symbol) => {
     return{ name, symbol};
 };
 
+let player1Name = document.getElementById("user1Input").value;
+let player2Name = document.getElementById("user2Input").value;
+
+
 
     //players
     const player1 = players('player1','X');
@@ -128,14 +132,14 @@ const stopGameWhenWon = ()=>{
     let winnerDiv = document.getElementById('winner')
 
     if(resultX == true){
-        winnerDiv.textContent = "Player 1 Has Won!"
+        winnerDiv.textContent = `${player1.name} Has Won!`
         let div = document.querySelectorAll(".squares");
         div.forEach(function(element){
             element.removeEventListener('click',render.addInput);
         }
         )}
     else if(resultO == true){
-        winnerDiv.textContent = "Player 2 Has Won!!"
+        winnerDiv.textContent = `${player1.name}Has Won!!`
         let div = document.querySelectorAll(".squares");
         div.forEach(function(element){
             element.removeEventListener('click',render.addInput);
@@ -167,12 +171,26 @@ return{indexesOfPlayer1,indexesOfPlayer2,determineIndexOfPlays,determineWinnerO,
         console.log(gameBoard.board)
     };
 
+    const submitButton = ()=>{
+        let player1Name = document.getElementById("user1Input").value;
+        let player2Name = document.getElementById("user2Input").value;
+        player1.name = player1Name;
+        player2.name = player2Name;
 
-    return{resetButton};
+        let userScreen = document.getElementById('startScreen')
+        userScreen.style.display = 'none';
+        let TicTacToeScreen = document.getElementById('app')
+        TicTacToeScreen.style.display='block';
+    };
+
+
+    return{submitButton,resetButton};
 })();
 
  render.renderSquares();
  buttonLogic.resetButton();
+ let submitBtn = document.getElementById('submiteButton')
+ submitBtn.addEventListener('click',buttonLogic.submitButton);
 
 
  

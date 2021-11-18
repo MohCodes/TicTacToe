@@ -1,3 +1,6 @@
+.app {
+  display: none;
+}
 .mainContainer {
   border: darkcyan double;
   height: 70vh;
@@ -37,9 +40,8 @@
   border: darkcyan double;
   height: 10vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 82vh;
 }
 
 .reset {
@@ -54,8 +56,78 @@
 .winner {
   border: darkcyan double;
   height: 8vh;
-  width: 22vh;
+  width: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.plcaeHolder {
+  width: 15vh;
+}
+
+.startScreen {
+  border: darkcyan double;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.userTitle {
+  margin-top: 1vh;
+}
+
+.userSelection {
+  border: darkcyan double;
+  height: 40vh;
+  width: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10vh;
+}
+
+.nameContainers {
+  display: flex;
+  border: darkcyan double;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: 50vh;
+  gap: 1.5vh;
+}
+.user1Input {
+  display: flex;
+  border: darkcyan double;
+}
+
+.user2Input {
+  display: flex;
+  border: darkcyan double;
+}
+
+.user1Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user2Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submiteButton {
+  height: 4vh;
+  width: 8vh;
+  color: inherit;
+  background: none;
+  border: olive single;
+  border-width: 1px;
+  margin-bottom: 1vh;
 }
