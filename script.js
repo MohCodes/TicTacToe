@@ -167,10 +167,15 @@ return{indexesOfPlayer1,indexesOfPlayer2,determineIndexOfPlays,determineWinnerO,
         gameBoard.board = OGboard;
         render.renderSquares();
     };
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
 
     const submitButton = ()=>{
         let player1Name = document.getElementById("user1Input").value;
+        player1Name = capitalizeFirstLetter(player1Name)
         let player2Name = document.getElementById("user2Input").value;
+        player1Name = capitalizeFirstLetter(player2Name)
         if(player1Name == '' || player2Name == ''){
             return alert('Enter Names!!!');
         }

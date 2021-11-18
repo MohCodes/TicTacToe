@@ -25,7 +25,7 @@
   color: #58460d;
 }
 .ticTacToeContainer {
-  border: darkcyan double;
+  border: darkcyan solid;
   height: 60vh;
   width: 70vh;
   display: grid;
@@ -34,7 +34,7 @@
 }
 
 .squares {
-  border: darkcyan double;
+  border: darkcyan solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +98,7 @@
 .userSelection {
   border: darkcyan double;
   height: 40vh;
-  width: 80vh;
+  width: 47vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,19 +115,21 @@
   justify-content: center;
   align-items: center;
   height: 15vh;
-  width: 50vh;
-  gap: 1.5vh;
+  width: 45vh;
+  gap: 0.5vh;
   background-color: hsla(6, 29%, 73%, 0.911);
   border-radius: 4vh;
 }
 .user1Input {
   display: flex;
-  border: darkcyan double;
+  border-radius: 0.5vh;
+  width: 15vh;
 }
 
 .user2Input {
   display: flex;
-  border: darkcyan double;
+  border-radius: 0.5vh;
+  width: 15vh;
 }
 
 .user1Container {
