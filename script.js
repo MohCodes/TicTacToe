@@ -108,11 +108,11 @@ const determineIndexOfPlays = ()=>{
 
     gameBoard.board.forEach((choice,index)=> choice ==='X'? resultsX.push(index):null);
     indexesOfPlayer1 = resultsX;
-    console.log(indexesOfPlayer1)
+
 
     gameBoard.board.forEach((choice,index)=> choice ==='O'? resultsO.push(index):null);
     indexesOfPlayer2 = resultsO;
-    console.log(indexesOfPlayer2)
+
 
 }
 
@@ -120,12 +120,12 @@ let resultO
 let resultX
 const determineWinnerX = () =>{
      resultX = gameBoard.winningCombination.some((ar) => ar.every((e) => indexesOfPlayer1.includes(e)));
-      console.log(resultX);
+
 };
 
 const determineWinnerO = () =>{
      resultO = gameBoard.winningCombination.some((ar) => ar.every((e) => indexesOfPlayer2.includes(e)));
-      console.log(resultO);
+
 };
 
 const stopGameWhenWon = ()=>{
@@ -168,7 +168,6 @@ return{indexesOfPlayer1,indexesOfPlayer2,determineIndexOfPlays,determineWinnerO,
         const OGboard = ['','','','','','','','',''];
         gameBoard.board = OGboard;
         render.renderSquares();
-        console.log(gameBoard.board)
     };
 
     const submitButton = ()=>{
