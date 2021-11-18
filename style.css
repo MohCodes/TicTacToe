@@ -23,6 +23,7 @@
   background-color: #da9088;
   border-radius: 20px;
   color: #58460d;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .ticTacToeContainer {
   border: darkcyan solid;
@@ -116,7 +117,7 @@
   align-items: center;
   height: 15vh;
   width: 45vh;
-  gap: 0.5vh;
+  gap: 1vh;
   background-color: hsla(6, 29%, 73%, 0.911);
   border-radius: 4vh;
 }
